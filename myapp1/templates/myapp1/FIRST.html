@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    {% load static %}
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-</head>
-
-<body>
-
+    </head>
+  <body bgcolor="#add8e6">
+  {% block content %}
 <div class ="jumbotron">
     <div class="container">
         <hr>
         <h1><center>ВВЕДИТЕ ID СВОЕЙ СТРАНИЦЫ </center></h1>
-  <divform  action="SECOND" method="post">
-   <center><p><input type="text",name="pair" placeholder="ID"> </center>
-  </divform>
+        <form   action="podschet" method="POST" >
+
+      {% csrf_token %}
+   <center><p><input type="text",class="form-control" name="num1" placeholder="ID"> </center>
+
+            <center> <input type="submit"></center>
+         </form>
     <p>
-      <center> <a href="SECOND" class="btn btn-primary btn-lg"> ОТПРАВИТЬ</a></center>
+
    </p>
 </divform>
-    <center><img src="{% static 'image/vk.png' %}" width="30%" align="center" border="3" hspace="0%" vspace="0%" /></center>
+    <center><img src='static/image/vk.png' width="30%" align="center" border="3" hspace="0%" vspace="0%" /></center>
     <hr>
 </div>
-</body>
+</div>
+  {% endblock %}
+  </body>
+
 </html>
